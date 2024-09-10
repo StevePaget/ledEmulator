@@ -5,7 +5,7 @@ An initial attempt at a 64x64 bit emulator for an LED screen
 The functions include:
 
 ## drawGrid()
-This refreshes the entire grid with the contents of the 2D array called grid
+This refreshes the entire grid with the contents of the 2D array called ledscreen.grid
 
 ## drawPixel(row,col, colour)
 This draws a single pixel and updates the internal grid array for future reference.
