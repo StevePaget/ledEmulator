@@ -22,13 +22,14 @@ class Blob:
             for col in range(self.x - self.size, self.x + self.size + 1):
                 # use pythagoras to calculate distance
                 dist = math.sqrt(abs(self.y - row)**2 + abs(self.x-col)**2)
+                # only draw pixels that are a certain distance from centre point
                 if dist < self.size:
                     newpixels[row%64,col%64] = dist
                     led.drawPixel(row%64,col%64, self.colour)
         # erase old pixels
-        for pixel in self.pixels:
+        for pixel in self.pixels: # checking the old pixels list
             if pixel not in newpixels:
-                led.drawPixel(pixel[0]%64,pixel[1]%64, [0,0,0])
+                led.drawPixel(pixel[0]%64,pixel[1]%64, [0,0,0]) # blank it
         self.pixels = newpixels.copy()
 
 
